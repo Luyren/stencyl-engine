@@ -858,7 +858,7 @@ class Engine
 		Data.get();
 		GameModel.get().loadScenes();
 
-		#if cpp
+		#if (cpp || hl)
 		{
 			for(atlas in GameModel.get().atlases)
 			{

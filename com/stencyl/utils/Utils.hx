@@ -895,7 +895,7 @@ class Utils
 			{
 				trace("Error: can't save attribute due to recursion [name=" + name + "]");
 			}
-			#if cpp
+			#if (cpp || hl)
 			else if(error.indexOf("Invalid field:") == 0)
 			{
 				trace("Error: can't save attribute due to contained properties [name=" + name + ", value=" + value+"]");
