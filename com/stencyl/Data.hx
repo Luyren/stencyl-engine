@@ -230,7 +230,7 @@ class Data
 		{
 			resources.set(newResource.ID, newResource);
 
-			if(Std.isOfType(newResource, Sprite))
+			if(Std.is(newResource, Sprite))
 				resourceMap.set("Sprite_" + newResource.name, newResource);
 			else
 				resourceMap.set(newResource.name, newResource);
@@ -301,7 +301,7 @@ class Data
 		
 		for(r in resources)
 		{
-			if(Std.isOfType(r, ActorType))
+			if(Std.is(r, ActorType))
 			{
 				a.push(cast(r, ActorType));
 			}
@@ -362,7 +362,7 @@ class Data
 		{
 			if(r == null)
 				continue;
-			if(Std.isOfType(r, Sound) || Std.isOfType(r, ActorType))
+			if(Std.is(r, Sound) || Std.is(r, ActorType))
 				continue;
 			if(!r.isAtlasActive())
 				continue;

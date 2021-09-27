@@ -231,7 +231,7 @@ class Utils
 		for(i in 0...container.numChildren)
 		{
 			var obj = container.getChildAt(i);
-			if(Std.isOfType(obj, DisplayObjectContainer))
+			if(Std.is(obj, DisplayObjectContainer))
 			{
 				applyToAllChildren(cast obj, fun);
 			}
@@ -245,11 +245,11 @@ class Utils
 		{
 			var c = container.getChildAt(0);
 			
-			if(Std.isOfType(c, DisplayObjectContainer))
+			if(Std.is(c, DisplayObjectContainer))
 			{
 				Utils.removeAllChildren(cast(c, DisplayObjectContainer));
 			}
-			if(Std.isOfType(c, Tilemap))
+			if(Std.is(c, Tilemap))
 			{
 				Utils.removeAllTiles(cast c);
 			}
@@ -264,7 +264,7 @@ class Utils
 		{
 			var c = container.getTileAt(0);
 			
-			if(Std.isOfType(c, ITileContainer))
+			if(Std.is(c, ITileContainer))
 			{
 				Utils.removeAllTiles(cast c);
 			}
@@ -279,7 +279,7 @@ class Utils
 		{
 			var c = container.getChildAt(i);
 			
-			if(Std.isOfType(c, DisplayObjectContainer))
+			if(Std.is(c, DisplayObjectContainer))
 			{
 				Utils.demouse(cast(c, DisplayObjectContainer));
 			}
@@ -846,7 +846,7 @@ class Utils
 	 */
 	/*public static function shuffle(a:Dynamic)
 	{
-		if (Std.isOfType(a, Array))
+		if (Std.is(a, Array))
 		{
 			var i:Int = a.length, j:Int, t:Dynamic;
 			while (--i > 0)
@@ -907,7 +907,7 @@ class Utils
 		#end
 		
 		#if flash
-		if (Std.isOfType(value, haxe.ds.StringMap))
+		if (Std.is(value, haxe.ds.StringMap))
 		{
 			Reflect.setField(so.data, name, "[SerializedStringMap]" + haxe.Serializer.run(value));
 		}

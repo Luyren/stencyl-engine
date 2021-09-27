@@ -97,12 +97,12 @@ class AttributeValues
 			var key = mapElement.getKey();
 			var val:Dynamic = mapElement.getValue();
 
-			if(Std.isOfType(val, MbsDynamicList))
+			if(Std.is(val, MbsDynamicList))
 			{
 				var mdl:MbsDynamicList = cast val;
 				val = [for(i in 0...mdl.length()) mdl.readObject()];
 			}
-			else if(Std.isOfType(val, MbsList))
+			else if(Std.is(val, MbsList))
 			{
 				val = readMap(cast val);
 			}

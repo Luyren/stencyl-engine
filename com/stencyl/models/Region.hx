@@ -38,8 +38,8 @@ class Region extends Actor
 	private var originalWidth:Float;
 	private var originalHeight:Float;
 			
-	public var whenActorEntered:Event<(eventActor:Actor)->Void>;
-	public var whenActorExited:Event<(eventActor:Actor)->Void>;
+	public var whenActorEntered:Event<Actor->Void>;
+	public var whenActorExited:Event<Actor->Void>;
 	
 	private var justAdded:Array<Dynamic>;
 	private var justRemoved:Array<Dynamic>;
@@ -64,8 +64,8 @@ class Region extends Actor
 		copy = shapes[0];
 		
 		containedActors = new Map<Int,Int>();
-		whenActorEntered = new Event<(Actor)->Void>();
-		whenActorExited = new Event<(Actor)->Void>();
+		whenActorEntered = new Event<Actor->Void>();
+		whenActorExited = new Event<Actor->Void>();
 		
 		justAdded = new Array<Dynamic>();
 		justRemoved = new Array<Dynamic>();
@@ -97,7 +97,7 @@ class Region extends Actor
 		
 		else
 		{
-			if(Std.isOfType(shapes[0], B2PolygonShape))
+			if(Std.is(shapes[0], B2PolygonShape))
 			{
 				isCircle = false;
 				var trans = new B2Transform();
@@ -136,7 +136,7 @@ class Region extends Actor
 				cacheHeight = originalHeight = regionHeight = Math.round(Engine.toPixelUnits(Math.abs(lowerYBound - upperYBound)));
 			}
 				
-			else if(Std.isOfType(shapes[0], B2CircleShape))
+			else if(Std.is(shapes[0], B2CircleShape))
 			{
 				isCircle = true;
 				

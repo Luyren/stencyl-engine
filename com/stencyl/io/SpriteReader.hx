@@ -123,7 +123,7 @@ class SpriteReader implements AbstractReader
 			
 			var shapeData = shape.getShape();
 			
-			if (Std.isOfType(shapeData, MbsPolygon))
+			if (Std.is(shapeData, MbsPolygon))
 			{
 				var polygon:MbsPolygon = cast shapeData;
 				var points = polygon.getPoints();
@@ -183,7 +183,7 @@ class SpriteReader implements AbstractReader
 			
 			var shape:Dynamic;
 
-			if(Std.isOfType(shapeData, MbsCircle))
+			if(Std.is(shapeData, MbsCircle))
 			{
 				var circle:MbsCircle = cast shapeData;
 				shape = ShapeReader.createCircle(circle.getRadius(), circle.getPosition().getX(), circle.getPosition().getY(), imgWidth, imgHeight);

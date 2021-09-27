@@ -306,11 +306,11 @@ using StringTools;
 		
 		#else
 		
-		if (Std.isOfType(event.error, Error))
+		if (Std.is(event.error, Error))
 		{
 			trace(cast(event.error, Error).getStackTrace());
 		}
-		else if (Std.isOfType(event.error, ErrorEvent))
+		else if (Std.is(event.error, ErrorEvent))
 		{
 			trace(cast(event.error, ErrorEvent).text);
 		}
